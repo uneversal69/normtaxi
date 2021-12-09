@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#root,
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.btn-map {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 2em;
+  position: absolute;
+  z-index: 10000;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn-map__findme {
+  top: 50%;
+  right: 1em;
+  margin-top: -1em;
+}
+.inputmap {
+  z-index: 10000;
+  position:fixed;
+  left: 45%;
+  top: 0;
+  border-radius: 30%;
+}
