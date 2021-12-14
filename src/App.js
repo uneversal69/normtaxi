@@ -2,6 +2,7 @@ import "./App.css";
 import { MapContainer, TileLayer } from "react-leaflet";
 import FindMe from "./FindMe";
 import SearchFrom from "./inputName";
+import FromToForm from "./FromToForm";
 
 
 
@@ -12,6 +13,7 @@ const moscowCoords = [55.7520233,37.6153107];
 function App() {
   
   console.log("ok");
+
   return (
     
     <div id="map">
@@ -27,6 +29,7 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <FindMe />
+        <FromToForm />
       </MapContainer>
       
     </div>
