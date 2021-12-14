@@ -1,8 +1,8 @@
 import "./App.css";
 import { MapContainer, TileLayer } from "react-leaflet";
 import FindMe from "./FindMe";
-import SearchFrom from "./inputName";
 import FromToForm from "./FromToForm";
+import MainForm from "./components/MainForm/MainForm";
 
 
 
@@ -17,7 +17,6 @@ function App() {
   return (
     
     <div id="map">
-    <SearchFrom />
       <MapContainer
         style={{ width: "100%", height: "100%" }}
         center={moscowCoords}
@@ -31,7 +30,7 @@ function App() {
         <FindMe />
         <FromToForm />
       </MapContainer>
-      
+      <MainForm/>
     </div>
   );
 }

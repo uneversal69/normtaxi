@@ -1,0 +1,13 @@
+.tariff {
+  margin: 0px;
+  padding: 0px;
+
+  width: 75px;
+  height: 54px;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+.tariffActive {
+  background: #eeeeee;
+}

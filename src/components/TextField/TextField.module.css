@@ -1,0 +1,8 @@
+.textField {
+  display: flex;
+  align-items: center;
+}
+.textField__input {
+  border: none;
+  width: 100%;
+}

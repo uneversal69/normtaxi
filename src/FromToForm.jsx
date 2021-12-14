@@ -15,7 +15,7 @@ const FromToForm = () => {
       },
       geocoder: L.Control.Geocoder.nominatim(),
     }).addTo(map);
-  }, []);
+  }, [map]);
 
   return <></>;
 };
