@@ -1,3 +1,24 @@
 .tariffList {
   display: flex;
 }
+.findTaxi {
+  border: none;
+  width: 100%;
+  height: 54px;
+  font-size: 25px;
+  background: #ffd600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mapbutton {
+  border: none;
+  font-size: 13px;
+  font-family: roboto;
+  background: white;
+  cursor: pointer;
+}
+.applediv {
+  border: 1 black solid;
+  border-radius: 6px;
+}

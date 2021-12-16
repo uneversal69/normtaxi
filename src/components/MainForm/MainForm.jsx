@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { useMapEvents, Marker, Popup } from "react-leaflet";
 import Divider from "@components/Divider/Divider";
 import Spacer from "@components/Spacer/Spacer";
 import Tariff from "@components/Tariff/Tariff";
 import TextField from "@components/TextField/TextField";
+import styles from "./MainFrom.module.css";
+import CloseIcon from "@components/Icons/CloseIcon";
+import ApplePay from "@components/Icons/ApplePay";
+
+
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -25,27 +30,34 @@ function MainForm() {
         <TextField
           postfix={
             <>
+              <Spacer x={0.5} />
+              <CloseIcon />
               <Spacer x={1} />
               <Divider variant="vertical" y={3} />
               <Spacer x={1} />
-              <button className="mapbutton">карта</button>
+              <button className={styles.mapbutton}>карта</button>
             </>
           }
         />
       </div>{" "}
       <div className="tarifmodal">
-        <div>
+        <div className={styles.tariffList}>
           {tariffList.map(({ value, name, price }) => (
-            <Tariff
-              key={value}
-              name={name}
-              price={price}
-              onClick={() => handleTariffChange(value)}
-              active={tariff === value}
-            />
+            <Fragment key={value}>
+              <Tariff
+                name={name}
+                price={price}
+                onClick={() => handleTariffChange(value)}
+                active={tariff === value}
+              />
+              <Spacer x={2} />
+
+            </Fragment>
           ))}
         </div>
-        <button className="findTaxi">Заказать</button>
+        <div className={styles.applediv}><ApplePay/></div>
+        <Spacer y={2} />
+        <button className={styles.findTaxi}>Заказать</button>
       </div>
     </>
   );

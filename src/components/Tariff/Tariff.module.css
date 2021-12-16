@@ -7,7 +7,13 @@
 
   border-radius: 6px;
   cursor: pointer;
+  padding: 4px;
+  font-size: 12px;
 }
 .tariffActive {
   background: #eeeeee;
+  
+}
+.tariff__price {
+  font-size: 18px;
 }
