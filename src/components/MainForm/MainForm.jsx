@@ -10,6 +10,7 @@ import ApplePay from "@components/Icons/ApplePay";
 import MapButton from "@components/MapButton/MapButton";
 import MapPin from "@components/Icons/MapPin";
 import { useMapEvents } from "react-leaflet";
+import CircleIcon from "@components/Icons/CircleIcon";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -66,8 +67,9 @@ function MainForm() {
               </div>
               <div className={styles.mainForm}>
                 <div className={styles.paper}>
+                <CircleIcon/>                          
                   {address}
-                  <button type="button">Поеду отсюда</button>
+                  <button className={styles.gotoButton} type="button">Поеду отсюда</button>
                 </div>
               </div>
             </>
