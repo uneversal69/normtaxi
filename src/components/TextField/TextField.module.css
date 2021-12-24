@@ -1,8 +1,14 @@
 .textField {
   display: flex;
   align-items: center;
+  line-height: 20px;
+  padding-bottom: 6px;
+  
 }
 .textField__input {
+  padding-bottom: 6px;
+  
   border: none;
   width: 100%;
+  line-height: 20px;
 }

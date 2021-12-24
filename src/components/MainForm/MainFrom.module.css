@@ -1,3 +1,5 @@
+.form {
+}
 .tariffList {
   display: flex;
 }
@@ -11,14 +13,20 @@
   cursor: pointer;
 }
 
-.mapbutton {
-  border: none;
-  font-size: 13px;
-  font-family: roboto;
-  background: white;
-  cursor: pointer;
-}
 .applediv {
   border: 1 black solid;
   border-radius: 6px;
 }
+
+.inputmap {
+  z-index: 10000;
+  position: fixed;
+  width: 296px;
+  left: 45%;
+  top: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);}

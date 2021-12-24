@@ -1,19 +1,19 @@
 .tariff {
-  margin: 0px;
-  padding: 0px;
+  
 
   width: 75px;
   height: 54px;
 
   border-radius: 6px;
   cursor: pointer;
-  padding: 4px;
   font-size: 12px;
+  line-height: 20px;
 }
 .tariffActive {
   background: #eeeeee;
   
 }
 .tariff__price {
+  line-height: 20px;
   font-size: 18px;
 }

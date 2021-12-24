@@ -37,10 +37,10 @@ body {
 .inputmap {
   z-index: 10000;
   position: fixed;
-  width: 320px;
+  width: 296px;
   left: 45%;
   top: 0;
-  padding: 10px;
+  padding: 12px;
   border-radius: 12px;
   background-color: white;
   display: flex;
@@ -67,9 +67,9 @@ body {
   z-index: 10000;
   position: fixed;
   left: 45%;
-  top: 12%;
-  padding: 10px;
-  width: 320px;
+  top: 100px;
+  padding: 12px;
+  width: 296px;
   border-radius: 12px;
   background: #ffffff;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
