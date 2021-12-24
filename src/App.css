@@ -63,18 +63,6 @@ body {
   border-radius: 12px;
 }
 
-.tarifmodal {
-  z-index: 10000;
-  position: fixed;
-  left: 45%;
-  top: 100px;
-  padding: 12px;
-  width: 296px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-}
-
 .standart {
   margin: 0px;
   padding: 0px;

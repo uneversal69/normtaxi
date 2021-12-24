@@ -1,12 +1,14 @@
 import styles from "./MapButton.module.css";
 import React from "react";
 
-function MapButton() {
-    const handleSelectOnMap = (e) => {
-    }
-  
-    return
-    (<button className={styles.mapbutton} onClick={handleSelectOnMap}>Карта</button>)
+function MapButton(props) {
+  const { onClick } = props;
+
+  return (
+    <button className={styles.mapbutton} onClick={onClick} type="button">
+      Карта
+    </button>
+  );
 }
 
 export default MapButton;
