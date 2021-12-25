@@ -1,4 +1,6 @@
+import MapButton from "@components/MapButton/MapButton";
 import { useState } from "react";
+import styles from "./FindMe.module.css";
 import { useMapEvents, Marker, Popup } from "react-leaflet";
 
 const FindMe = () => {
@@ -18,9 +20,7 @@ const FindMe = () => {
   };
   return (
     <>
-      <button className="btn-map btn-map__findme" onClick={handleFindMe}>
-        📍
-      </button>
+      <MapButton className={styles.findMe} onClick={handleFindMe}>📍</MapButton>
       {position ? (
         <Marker position={position}>
           <Popup>Я здесь</Popup>

@@ -12,41 +12,6 @@ body {
   position: relative;
 }
 
-.btn-map {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
-  background: #fff;
-  border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  border-radius: 2em;
-  position: absolute;
-  z-index: 10000;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  box-sizing: border-box;
-  user-select: none;
-  cursor: pointer;
-}
-
-.btn-map__findme {
-  top: 50%;
-  right: 1em;
-  margin-top: -1em;
-}
-.inputmap {
-  z-index: 10000;
-  position: fixed;
-  width: 296px;
-  left: 45%;
-  top: 0;
-  padding: 12px;
-  border-radius: 12px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-}
 .inputtext1 {
   border: none;
   border-bottom: 1px solid #e9e9e9;

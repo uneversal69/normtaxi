@@ -9,7 +9,7 @@
 .tariffList {
   display: flex;
 }
-.findTaxi {
+.bigYellowBtn {
   border: none;
   width: 100%;
   height: 54px;
@@ -68,17 +68,6 @@
     width: 296px;
     margin-left: -148px;
   }
-}
-.gotoButton {
-  
-  border: none;
-  width: 100%;
-  height: 54px;
-  font-size: 25px;
-  background: #ffd600;
-  border-radius: 6px;
-  cursor: pointer;
-
 }
 
 .selectOnMapPin {

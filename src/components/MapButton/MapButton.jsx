@@ -2,11 +2,10 @@ import styles from "./MapButton.module.css";
 import React from "react";
 
 function MapButton(props) {
-  const { onClick } = props;
-
+  const { onClick, children, className } = props;
   return (
-    <button className={styles.mapbutton} onClick={onClick} type="button">
-      Карта
+    <button className={`${styles.mapButton} ${className ?? ''}`} onClick={onClick} type="button">
+      {children}
     </button>
   );
 }

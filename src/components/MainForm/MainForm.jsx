@@ -7,10 +7,11 @@ import TextField from "@components/TextField/TextField";
 import styles from "./MainFrom.module.css";
 import CloseIcon from "@components/Icons/CloseIcon";
 import ApplePay from "@components/Icons/ApplePay";
-import MapButton from "@components/MapButton/MapButton";
 import MapPin from "@components/Icons/MapPin";
 import { useMapEvents } from "react-leaflet";
 import CircleIcon from "@components/Icons/CircleIcon";
+import TextButton from "@components/TextButton/TextButton";
+import MapButton from "@components/MapButton/MapButton";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -55,21 +56,22 @@ function MainForm() {
         <form onSubmit={handleSubmit} className={styles.form}>
           {selectingOnMap ? (
             <>
-              <button
+              <MapButton
                 className={styles.backBtn}
-                type="button"
                 onClick={handleCancelSelectOnMap}
               >
-                Back
-              </button>
+                ⬅️
+              </MapButton>
               <div className={styles.selectOnMapPin}>
                 <MapPin />
               </div>
               <div className={styles.mainForm}>
                 <div className={styles.paper}>
-                <CircleIcon/>                          
+                  <CircleIcon />
                   {address}
-                  <button className={styles.gotoButton} type="button">Поеду отсюда</button>
+                  <button className={styles.bigYellowBtn} type="button">
+                    Поеду отсюда
+                  </button>
                 </div>
               </div>
             </>
@@ -90,7 +92,9 @@ function MainForm() {
                           <Spacer x={1} />
                           <Divider variant="vertical" y={3} />
                           <Spacer x={1} />
-                          <MapButton onClick={handleSelectFromOnMap} />
+                          <TextButton onClick={handleSelectFromOnMap}>
+                            Карта
+                          </TextButton>
                         </>
                       }
                     />
@@ -111,7 +115,7 @@ function MainForm() {
                           <Spacer x={1} />
                           <Divider variant="vertical" y={3} />
                           <Spacer x={1} />
-                          <MapButton />
+                          <TextButton>Карта</TextButton>
                         </>
                       }
                     />
@@ -144,7 +148,7 @@ function MainForm() {
                   )}
                 />
                 <Spacer y={2} />
-                <button className={styles.findTaxi} type="submit">
+                <button className={styles.bigYellowBtn} type="submit">
                   Заказать
                 </button>
               </div>
