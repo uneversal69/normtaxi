@@ -41,15 +41,7 @@
   pointer-events: auto;
 }
 
-.mainForm {
-  z-index: 10000;
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 48px;
-  cursor: auto;
-  pointer-events: auto;
-}
+
 
 .paper {
   padding: 12px;
@@ -59,16 +51,7 @@
   text-align: center;
 }
 
-@media screen and (min-width: 600px) {
-  .mainForm {
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    top: 12px;
-    width: 296px;
-    margin-left: -148px;
-  }
-}
+
 
 .selectOnMapPin {
   z-index: 10000;
@@ -80,3 +63,4 @@
   margin-left: -13px;
   pointer-events: none;
 }
+

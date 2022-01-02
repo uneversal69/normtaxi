@@ -8,6 +8,7 @@ import {
 } from "react-leaflet";
 import FromToForm from "./FromToForm";
 import MainForm from "./components/MainForm/MainForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 import FindMe from "@components/FindMe/FindMe";
 
 const moscowCoords = [55.7520233, 37.6153107];
@@ -40,7 +41,7 @@ function App() {
         />
         <FindMe />
         <FromToForm />
-        <MainForm />
+        <LoginForm/>
       </MapContainer>
     </div>
   );

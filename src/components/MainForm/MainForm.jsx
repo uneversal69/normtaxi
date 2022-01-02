@@ -12,6 +12,7 @@ import { useMapEvents } from "react-leaflet";
 import CircleIcon from "@components/Icons/CircleIcon";
 import TextButton from "@components/TextButton/TextButton";
 import MapButton from "@components/MapButton/MapButton";
+import Container from "@components/Container/Container";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -65,7 +66,7 @@ function MainForm() {
               <div className={styles.selectOnMapPin}>
                 <MapPin />
               </div>
-              <div className={styles.mainForm}>
+              <Container>
                 <div className={styles.paper}>
                   <CircleIcon />
                   {address}
@@ -73,10 +74,10 @@ function MainForm() {
                     Поеду отсюда
                   </button>
                 </div>
-              </div>
+              </Container>
             </>
           ) : (
-            <div className={`${styles.mainForm} leaflet-control`}>
+            <Container className="leaflet-control">
               <div className={styles.addressBlock}>
                 <Field
                   name="from"
@@ -152,7 +153,7 @@ function MainForm() {
                   Заказать
                 </button>
               </div>
-            </div>
+            </Container>
           )}
         </form>
       )}
