@@ -8,6 +8,7 @@
 }
 .tariffList {
   display: flex;
+  align-items: center;
 }
 .bigYellowBtn {
   border: none;
@@ -19,9 +20,8 @@
   cursor: pointer;
 }
 
-.applediv {
-  border: 1 black solid;
-  border-radius: 6px;
+.paymentMethod {
+  
 }
 
 .addressBlock {

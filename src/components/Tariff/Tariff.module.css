@@ -8,6 +8,9 @@
   cursor: pointer;
   font-size: 12px;
   line-height: 20px;
+  text-align: left;
+  padding: 6px;
+  box-sizing: border-box;
 }
 .tariffActive {
   background: #eeeeee;

@@ -101,7 +101,9 @@ function MainForm() {
                     />
                   )}
                 />
+                <Spacer y={0.5} />
                 <Divider />
+                <Spacer y={0.5} />
                 <Field
                   name="to"
                   render={({ input }) => (
@@ -140,9 +142,8 @@ function MainForm() {
                           <Spacer x={2} />
                         </Fragment>
                       ))}
-                      <Spacer x={13} />
-                      <div className={styles.applediv}>
-                        <Spacer y={3} />
+                      <Spacer flexGrow={1} />
+                      <div className={styles.paymentMethod}>
                         <ApplePay />
                       </div>
                     </div>

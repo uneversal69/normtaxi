@@ -1,52 +1,27 @@
-.MainLoginForm {
-    background: #fff;
-  z-index: 10000;
-  position: absolute;
-  width: 366px;
-  height: 318px;
-  left: 12px;
-  top: 50%;
-  }
-  .inputPhone {
-  
-  }
-  
-  .addBaseAcc {
-    border: none;
-    width: 100%;
-    height: 54px;
-    font-size: 25px;
-    background: #ffd600;
-    border-radius: 6px;
-    cursor: pointer;
-  
-  }
-  .graySmallBtn {
-    border: none;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    text-decoration-line: underline;
-    color :#999;
-  }
-  .statusBtn {
-    background:  #fff;
-    border: 2px solid #FFD600;
-    box-sizing: border-box;
-    border-radius: 6px;
-  }
+.inputPhone {
+}
 
-  
-
-@media screen and (min-width: 600px) {
-    .MainLoginForm {
-        z-index: 10000;
-        position: absolute;
-            width: 366px;
-            height: 318px;
-            left: 50%;
-            top: 12px;
-            }
-
-    }
+.addBaseAcc {
+  border: none;
+  width: 100%;
+  height: 54px;
+  font-size: 25px;
+  background: #ffd600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.graySmallBtn {
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #999;
+}
+.statusBtn {
+  background: #fff;
+  border: 2px solid #ffd600;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
