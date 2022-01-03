@@ -6,6 +6,7 @@
   bottom: 48px;
   cursor: auto;
   pointer-events: auto;
+  
 }
 
 @media screen and (min-width: 600px) {
@@ -16,5 +17,6 @@
     top: 12px;
     width: 296px;
     margin-left: -148px;
+    
   }
 }

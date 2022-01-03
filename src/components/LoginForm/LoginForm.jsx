@@ -11,18 +11,21 @@ function LoginForm() {
   return (
     <Container>
       <Paper>
-        <Spacer x={9} />
+      <div className={styles.loginhead}>
+        <Spacer x={5} />
         <CompanyIcon />
-        <p>Норм Такси</p>
+        <Spacer x={5} /><p>Норм Такси</p>
         <p>Добро пожаловать Чтобы войти как пасссажир введите номер телефона</p>
         <input
           className={styles.inputPhone}
           type="number"
           placeholder="+7"
         ></input>
+        <Divider variant="horizontal" y={0} />
         <button className={styles.addBaseAcc}>Войти</button>
         <Spacer x={9} />
         <button className={styles.graySmallBtn}>я водитель</button>
+        </div>
       </Paper>
     </Container>
   );

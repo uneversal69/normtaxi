@@ -1,4 +1,7 @@
 .inputPhone {
+  border: none;
+  width: 100%;
+  line-height: 20px;
 }
 
 .addBaseAcc {
@@ -24,4 +27,7 @@
   border: 2px solid #ffd600;
   box-sizing: border-box;
   border-radius: 6px;
+}
+.loginhead {
+  
 }
