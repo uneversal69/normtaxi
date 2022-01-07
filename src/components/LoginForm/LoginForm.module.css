@@ -1,5 +1,6 @@
 .inputPhone {
   border: none;
+  border-bottom: 1px solid black;
   width: 100%;
   line-height: 20px;
 }
@@ -21,6 +22,7 @@
   line-height: 20px;
   text-decoration-line: underline;
   color: #999;
+  background: transparent;
 }
 .statusBtn {
   background: #fff;
@@ -29,5 +31,28 @@
   border-radius: 6px;
 }
 .loginhead {
-  
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headerName {
+  font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 20px;
+margin-bottom: 0em;
+}
+
+.headerText {
+  font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+margin-top: 0em; 
+margin-bottom: 0em;
 }
