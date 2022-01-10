@@ -1,5 +1,19 @@
 .statusForm {
-
+border-radius: 6px;
+cursor: pointer;
+font-size: 12px;
+line-height: 20px;
+text-align: left;
+padding: 6px;
+box-sizing: border-box;
+border: 2px solid #FFD600;
+background: white;
+}
+.statusFormTime {
+   line-height: 20px;
+    font-size: 18px;
+      
+      
 }
 
 .bigWhiteBtn {
@@ -12,3 +26,4 @@
   border-radius: 6px;
     cursor: pointer;
   }
+

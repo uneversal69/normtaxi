@@ -6,6 +6,7 @@ import styles from "./LoginForm.module.css";
 import CompanyIcon from "@components/Icons/CompanyLogo";
 import Container from "@components/Container/Container";
 import Paper from "@components/Paper/Paper";
+import BigYellowBtn from "@components/BigYellowBtn/BigYellowBtn";
 
 const initialValues = {
   phone: "",
@@ -13,7 +14,6 @@ const initialValues = {
 
 function LoginForm() {
   const onSubmit = async (values) => {
-    console.log("создаем заказ, вот данные формы:", values);
   };
 
   return (
@@ -24,10 +24,11 @@ function LoginForm() {
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <Paper>
-              <div className={styles.loginhead}>
-                <Spacer x={8} />
+              <div className={styles.logo}>
+               
                 <CompanyIcon />
                 <Spacer x={2} /><p className={styles.headerName}>Норм Такси</p>
+                
 
               </div>
               <Spacer y={2} />
@@ -52,7 +53,7 @@ function LoginForm() {
               <Spacer y={2} />
 
 
-              <button className={styles.addBaseAcc} type="submit">Войти</button>
+              <BigYellowBtn namebutton={"Войти"}/>
               <Spacer y={4} />
 
               <div className={styles.loginhead}><Spacer x={15.5} /> <button className={styles.graySmallBtn} type="button">я водитель</button></div>

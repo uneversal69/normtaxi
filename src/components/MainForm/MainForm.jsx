@@ -13,6 +13,7 @@ import CircleIcon from "@components/Icons/CircleIcon";
 import TextButton from "@components/TextButton/TextButton";
 import MapButton from "@components/MapButton/MapButton";
 import Container from "@components/Container/Container";
+import BigYellowBtn from "@components/BigYellowBtn/BigYellowBtn";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -150,9 +151,7 @@ function MainForm() {
                   )}
                 />
                 <Spacer y={2} />
-                <button className={styles.bigYellowBtn} type="submit">
-                  Заказать
-                </button>
+                <BigYellowBtn namebutton={"Заказать"}/>
               </div>
             </Container>
           )}

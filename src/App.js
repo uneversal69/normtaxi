@@ -10,6 +10,7 @@ import FromToForm from "./FromToForm";
 import MainForm from "./components/MainForm/MainForm";
 import LoginForm from "./components/LoginForm/LoginForm";
 import FindMe from "@components/FindMe/FindMe";
+import NewOrderDialog from "@components/NewOrderDialog/NewOrderDialog";
 
 const moscowCoords = [55.7520233, 37.6153107];
 
@@ -41,8 +42,10 @@ function App() {
         />
         <FindMe />
         <FromToForm />
-        <LoginForm/>
+        <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15}/>
+        
         {/* <MainForm /> */}
+        {/* <LoginForm/> */}
       </MapContainer>
     </div>
   );

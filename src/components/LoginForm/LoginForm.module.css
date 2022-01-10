@@ -32,7 +32,6 @@
 }
 .loginhead {
   display: flex;
-  display: flex;
   justify-content: center;
   align-content: space-between;
   align-items: center;
@@ -55,4 +54,14 @@ line-height: 20px;
 text-align: center;
 margin-top: 0em; 
 margin-bottom: 0em;
+}
+.logo {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  
+
 }
