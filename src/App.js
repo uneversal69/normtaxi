@@ -16,8 +16,7 @@ const moscowCoords = [55.7520233, 37.6153107];
 
 function App() {
   console.log("ok");
-
-  const initMap = (map) => {
+  const initMap = (newMap) => {
     // раскомментить чтобы добавить кнопки зума
     /* L.control
       .zoom({
@@ -41,11 +40,11 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <FindMe />
-        <FromToForm />
-        <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15}/>
-        
+        {/* <FromToForm /> */}
+        {/* <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15} /> */}
+
         {/* <MainForm /> */}
-        {/* <LoginForm/> */}
+        <LoginForm />
       </MapContainer>
     </div>
   );

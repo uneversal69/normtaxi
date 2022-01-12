@@ -3,13 +3,14 @@ import styles from "./NewOrderDialog.module.css";
 import Container from "@components/Container/Container";
 import Spacer from "@components/Spacer/Spacer";
 import BigYellowBtn from "@components/BigYellowBtn/BigYellowBtn";
+import { useDisableClickPropagation } from "@utils";
 
 
 function NewOrderDialog({ price, addres, time}) {
-
+  const rootRef = useDisableClickPropagation();
 
   return (
-    <Container>
+    <Container ref={rootRef}>
       <div className={styles.head}><p className={styles.nameTextField}>Новый заказ на {price}р</p></div>
       <div className={styles.newAddContent}><div className={styles.grid}>
         <div className={styles.gridItem1}><p className={styles.gridText}>Адрес Отправления</p></div>

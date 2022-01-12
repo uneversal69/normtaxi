@@ -1,9 +1,12 @@
 import MapButton from "@components/MapButton/MapButton";
 import { useState } from "react";
-import styles from "./FindMe.module.css";
 import { useMapEvents, Marker, Popup } from "react-leaflet";
+import { useDisableClickPropagation } from "@utils";
+import styles from "./FindMe.module.css";
 
 const FindMe = () => {
+  const rootRef = useDisableClickPropagation();
+
   const [position, setPosition] = useState(null);
   const map = useMapEvents({
     /* click() {
@@ -20,7 +23,9 @@ const FindMe = () => {
   };
   return (
     <>
-      <MapButton className={styles.findMe} onClick={handleFindMe}>📍</MapButton>
+      <MapButton ref={rootRef} className={styles.findMe} onClick={handleFindMe}>
+        📍
+      </MapButton>
       {position ? (
         <Marker position={position}>
           <Popup>Я здесь</Popup>
