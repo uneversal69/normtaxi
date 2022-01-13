@@ -8,17 +8,22 @@ import Container from "@components/Container/Container";
 import Paper from "@components/Paper/Paper";
 import BigYellowBtn from "@components/BigYellowBtn/BigYellowBtn";
 import { useDisableClickPropagation } from "@utils";
-import { useApi, authAsPassengerUri } from "@modules/api";
-import { useState } from "react";
+import { useApi, authAsPassengerUri, authCheckCodeUri, AppContext } from "@modules/api";
+import { useContext, useState } from "react";
 
 const initialValues = {
   phone: "",
 };
 
 // /auth/passenger
+// POST /auth/code { code, type: userType, }
+const PASSENGER = "PASSENGER";
+const DRIVER = "DRIVER";
 
 function LoginForm() {
   const rootRef = useDisableClickPropagation();
+  const { handleLogin } = useContext(AppContext);
+  const [userType, setUserType] = useState(PASSENGER);
   const [sentCode, setSentCode] = useState(false);
   const [{ loading }, refetch, cancel] = useApi(
     { method: "POST" },
@@ -39,12 +44,33 @@ function LoginForm() {
     }
   };
 
+  const handleCodeChange = async (e) => {
+    const code = e.target.value;
+    if (code.length === 6) {
+      const { data } = await refetch({
+        data: { code, type: userType },
+        url: authCheckCodeUri,
+      });
+      if (!data) return { phone: "Неизвестная ошибка" };
+      if (data.success) {
+        handleLogin(data.user ?? { sometest: true })
+        alert(`Успешная авторизация!`);
+      } else {
+        alert(data.error);
+      }
+    }
+  };
+
   return (
     <Container ref={rootRef}>
       {sentCode ? (
         <Paper>
           <p className={styles.headerText}>Введите код из смс</p>
-          <input className={styles.inputPhone} />
+          <input
+            className={styles.inputPhone}
+            onChange={handleCodeChange}
+            maxLength={6}
+          />
         </Paper>
       ) : (
         <Form
@@ -81,7 +107,7 @@ function LoginForm() {
                 />
                 <Spacer y={2} />
 
-                <BigYellowBtn namebutton={"Войти"} />
+                <BigYellowBtn namebutton={"Войти"} disabled={loading} />
                 <Spacer y={4} />
 
                 <div className={styles.loginhead}>
