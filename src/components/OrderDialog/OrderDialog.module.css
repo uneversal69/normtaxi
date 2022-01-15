@@ -1,0 +1,54 @@
+.graySmallBtn {
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: #999;
+    background: transparent;
+  }
+.grid {
+    display: flex;
+    align-items: center;
+  
+}
+.tariffList {
+  display: flex;
+  align-items: center;
+}
+.buttonField {
+    display: flex;
+}
+.TextField {
+    display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+.text {
+    margin-top: 0.1em; 
+margin-bottom: 0em;
+}
+.paymentMethod {
+    display: flex;
+    align-items: center;
+   
+
+}
+.buttonBottom {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+.bigWhiteBtn {
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  background: white;
+  border: 2px solid #FFD600;
+  box-sizing: border-box;
+  border-radius: 6px;
+  cursor: pointer;
+  }
