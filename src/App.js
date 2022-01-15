@@ -12,11 +12,14 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import FindMe from "@components/FindMe/FindMe";
 import NewOrderDialog from "@components/NewOrderDialog/NewOrderDialog";
 import OrderDialog from "@components/OrderDialog/OrderDialog";
+import { AppContext } from "@modules/api";
+import { useContext } from "react";
+import Container from "@components/Container/Container";
 
 const moscowCoords = [55.7520233, 37.6153107];
 
 function App() {
-  console.log("ok");
+  const { user } = useContext(AppContext);
   const initMap = (newMap) => {
     // раскомментить чтобы добавить кнопки зума
     /* L.control
@@ -45,8 +48,9 @@ function App() {
         {/* <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15} /> */}
 
         {/* <MainForm /> */}
-        <OrderDialog/>
+        {/* <OrderDialog/> */}
         {/*<LoginForm />*/}
+        {user ? <MainForm /> : <LoginForm />}
       </MapContainer>
     </div>
   );
