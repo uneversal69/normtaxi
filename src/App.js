@@ -48,9 +48,9 @@ function App() {
         {/* <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15} /> */}
 
         {/* <MainForm /> */}
-        {/* <OrderDialog/> */}
+        <OrderDialog timeToGo={5} timeToRoad={10}/>
         {/*<LoginForm />*/}
-        {user ? <MainForm /> : <LoginForm />}
+         {/*{user ? <MainForm /> : <LoginForm />}*/}
       </MapContainer>
     </div>
   );

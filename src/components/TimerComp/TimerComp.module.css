@@ -1,0 +1,20 @@
+.timer {
+
+  
+    
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 2px solid #FFD600;
+box-sizing: border-box;
+border-radius: 6px;
+  }
+  
+  .timer__min {
+    line-height: 20px;
+    font-size: 18px;
+  }
+  

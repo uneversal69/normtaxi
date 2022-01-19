@@ -51,4 +51,18 @@ margin-bottom: 0em;
   box-sizing: border-box;
   border-radius: 6px;
   cursor: pointer;
+  max-height: 54px;
   }
+
+.stateForm {
+  text-align: center;
+  box-sizing: border-box;
+  font-style: normal;
+    font-weight: normal;
+font-size: 18px;
+max-height: 54px;
+  
+
+  background-color: #eeeeee;
+border-radius: 6px;
+}

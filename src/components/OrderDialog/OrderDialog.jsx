@@ -10,19 +10,40 @@ import CircleIcon from "@components/Icons/CircleIcon";
 import ApplePay from "@components/Icons/ApplePay";
 import { Fragment, useState } from "react";
 import { Form, Field } from "react-final-form";
+import TimerComp from "@components/TimerComp/TimerComp";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
 const tariff = {
   value: TARIFF_STANDARD, name: "Стандарт", price: 200
 }
+const stateButton = [
+  {id : "01",text : "Ищем водителя.." , setState : "one"},
+{id : "02" ,text : `Водитель прибудет через ${55} минут` , setState : "two"},
+{id : "03" ,text : `Осталось ехать ${78} минут` , setState : "tre"},
+];
 
 
 
-
-function OrderDialog() {
+function OrderDialog({timeToGo, timeToRoad }) {
   const rootRef = useDisableClickPropagation();
+  const [name, setName] = useState('Ищем водителя');
+  const [displayTimer, setDisplayTimer] = useState(true);
+const showTimer = () => setDisplayTimer(true); 
+const hideTimer = () => setDisplayTimer(false);
 
+  
+ function clickButton() { 
+    let buttonName = stateButton.find(item => item.id == 2); {/* вот тут достаёться из обьекта по айди */}
+    setName(buttonName.text);
+    hideTimer();
+    
+ }
+
+    
+  
+  
+  
   return (
 
     <Container ref={rootRef}>
@@ -58,8 +79,9 @@ function OrderDialog() {
           />
           <Spacer x={2}/>
 
-
-          <button className={styles.bigWhiteBtn}>Ищем Водителя...</button>
+           <div className={styles.stateForm} hidden = {displayTimer}>Водитель наместе</div>
+          <button className={styles.bigWhiteBtn} onClick={clickButton}>{name}</button>
+          <TimerComp name={"Ожидание"} time={"00:05"} hidden = {displayTimer} />
         </div>
         <div className={styles.buttonBottom}>
           <Spacer x={15.5} />{" "}
