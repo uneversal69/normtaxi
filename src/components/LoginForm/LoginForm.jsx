@@ -107,7 +107,7 @@ function LoginForm() {
                 />
                 <Spacer y={2} />
 
-                <BigYellowBtn namebutton={"Войти"} disabled={loading} />
+                <BigYellowBtn disabled={loading}>Войти</BigYellowBtn>
                 <Spacer y={4} />
 
                 <div className={styles.loginhead}>
