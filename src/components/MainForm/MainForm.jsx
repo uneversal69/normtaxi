@@ -151,7 +151,7 @@ function MainForm() {
                   )}
                 />
                 <Spacer y={2} />
-                <BigYellowBtn namebutton={"Заказать"}/>
+                <BigYellowBtn>Заказать</BigYellowBtn>
               </div>
             </Container>
           )}
