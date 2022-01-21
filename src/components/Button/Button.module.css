@@ -1,0 +1,12 @@
+.button {
+  font-style: normal;
+  border: 1px solid #aaa;
+  font-size: 15px;
+  background: white;
+  border-radius: 6px;
+  height: 32px;
+  cursor: pointer;
+}
+.button--fullWidth {
+  width: 100%;
+}

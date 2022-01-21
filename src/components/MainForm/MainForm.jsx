@@ -32,7 +32,7 @@ function MainForm() {
   const [selectingOnMap, setSelectionOnMap] = useState(false);
   const [address, setAddress] = useState("Пушкина 23");
 
-  const map = useMapEvents({
+  useMapEvents({ // const map =
     moveend: (e) => {
       const { lat, lng } = e.target.getCenter();
       setAddress(lat && lng ? `${lat} ${lng}` : "fok");

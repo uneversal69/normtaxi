@@ -1,6 +1,5 @@
 import { Form, Field } from "react-final-form";
 import PhoneInput from "react-phone-number-input/input";
-import Divider from "@components/Divider/Divider";
 import Spacer from "@components/Spacer/Spacer";
 import styles from "./LoginForm.module.css";
 import CompanyIcon from "@components/Icons/CompanyLogo";
@@ -25,7 +24,7 @@ function LoginForm() {
   const { handleLogin } = useContext(AppContext);
   const [userType, setUserType] = useState(PASSENGER);
   const [sentCode, setSentCode] = useState(false);
-  const [{ loading }, refetch, cancel] = useApi(
+  const [{ loading }, refetch] = useApi(
     { method: "POST" },
     { manual: true }
   );
@@ -112,7 +111,7 @@ function LoginForm() {
 
                 <div className={styles.loginhead}>
                   <Spacer x={15.5} />{" "}
-                  <button className={styles.graySmallBtn} type="button">
+                  <button className={styles.graySmallBtn} type="button" onClick={() => setUserType(DRIVER)}>
                     я водитель
                   </button>
                 </div>

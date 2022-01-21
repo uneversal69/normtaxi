@@ -1,20 +1,19 @@
 import "./App.css";
 // import L from 'leaflet';
 import {
-  LayerGroup,
-  LayersControl,
   MapContainer,
   TileLayer,
 } from "react-leaflet";
-import FromToForm from "./FromToForm";
+// import FromToForm from "./FromToForm";
 import MainForm from "./components/MainForm/MainForm";
 import LoginForm from "./components/LoginForm/LoginForm";
 import FindMe from "@components/FindMe/FindMe";
-import NewOrderDialog from "@components/NewOrderDialog/NewOrderDialog";
-import OrderDialog from "@components/OrderDialog/OrderDialog";
+// import NewOrderDialog from "@components/NewOrderDialog/NewOrderDialog";
+// import OrderDialog from "@components/OrderDialog/OrderDialog";
 import { AppContext } from "@modules/api";
 import { useContext } from "react";
-import Container from "@components/Container/Container";
+// import Container from "@components/Container/Container";
+import Profile from "@components/Profile/Profile";
 
 const moscowCoords = [55.7520233, 37.6153107];
 
@@ -44,13 +43,14 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <FindMe />
+        {user && <Profile />}
         {/* <FromToForm /> */}
         {/* <NewOrderDialog price={280} addres={"Пушкинская 32"} time={15} /> */}
 
         {/* <MainForm /> */}
-        <OrderDialog timeToGo={5} timeToRoad={10}/>
+        {/* <OrderDialog /> */}
         {/*<LoginForm />*/}
-         {/*{user ? <MainForm /> : <LoginForm />}*/}
+         {user ? <MainForm /> : <LoginForm />}
       </MapContainer>
     </div>
   );

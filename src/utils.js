@@ -22,7 +22,7 @@ export const getLocation = () => {
 export const useDisableClickPropagation = () => {
   const rootRef = useRef(null);
   useEffect(() => {
-    L.DomEvent.disableClickPropagation(rootRef.current);
+    if (rootRef.current) L.DomEvent.disableClickPropagation(rootRef.current);
   });
   return rootRef;
 };

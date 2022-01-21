@@ -8,12 +8,13 @@ export const useApi = makeUseAxios({
 
 export const authAsPassengerUri = "/auth/passenger";
 export const authCheckCodeUri = "/auth/code";
-export const authCheck = "/user";
+export const authCheckUri = "/user";
+export const authLogoutUri = "/auth/logout";
 
 export const AppContext = createContext(null);
 
 export const AppContextProvider = ({ children }) => {
-  const [{}, refetch] = useApi({ url: authCheck }, { manual: true });
+  const [, refetch] = useApi({ url: authCheckUri }, { manual: true });
   const [state, setState] = useState({ user: null });
   const handleLogin = (user) => {
     setState((prev) => ({ ...prev, user }));
@@ -36,6 +37,6 @@ export const AppContextProvider = ({ children }) => {
         handleLogin(data.user);
       }
     })();
-  }, []);
+  }, [refetch]);
   return <AppContext.Provider value={app}>{children}</AppContext.Provider>;
 };

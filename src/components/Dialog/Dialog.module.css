@@ -1,0 +1,36 @@
+.dialog {
+  z-index: 10001;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: auto;
+  pointer-events: auto;
+}
+.dialog__content {
+  position: relative;
+}
+.dialogCloseBtn {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  .dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dialog__content {
+    min-width: 480px;
+    max-width: 580px;
+  }
+}

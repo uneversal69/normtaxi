@@ -11,7 +11,7 @@ const Spacer = ({ x, y, flexBasis, display, flexGrow }) => {
     if (display) initialStyle.display = display;
     if(flexGrow) initialStyle.flexGrow = flexGrow;
     return initialStyle;
-  }, [x, y, flexBasis, display]);
+  }, [x, y, flexBasis, display, flexGrow]);
   return <div className={styles.spacer} style={style}></div>;
 };
 
