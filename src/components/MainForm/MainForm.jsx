@@ -14,6 +14,7 @@ import TextButton from "@components/TextButton/TextButton";
 import MapButton from "@components/MapButton/MapButton";
 import Container from "@components/Container/Container";
 import BigYellowBtn from "@components/BigYellowBtn/BigYellowBtn";
+import { geocodeReverseUri, useApi } from "@modules/api";
 
 const TARIFF_STANDARD = "standard";
 const TARIFF_BUSINESS = "business";
@@ -29,13 +30,34 @@ const initialValues = {
 };
 
 function MainForm() {
-  const [selectingOnMap, setSelectionOnMap] = useState(false);
+  const [selectingOnMap, setSelectionOnMap] = useState(null);
   const [address, setAddress] = useState("Пушкина 23");
+  const [{ loading }, refetch, cancel] = useApi(
+    { method: "GET" },
+    { manual: true }
+  );
 
-  useMapEvents({ // const map =
-    moveend: (e) => {
+  useMapEvents({
+    // const map =
+    moveend: async (e) => {
+      cancel();
       const { lat, lng } = e.target.getCenter();
-      setAddress(lat && lng ? `${lat} ${lng}` : "fok");
+      let newAddress = "Не удалось определить адрес";
+      // lat && lng ?
+      const { data } = await refetch({ url: geocodeReverseUri({ lat, lng }) });
+      if (
+        data &&
+        data.success &&
+        data.geodata &&
+        data.geodata.results.length > 0
+      ) {
+        console.log(data.geodata);
+        const {
+          components: { road, house_number },
+        } = data.geodata.results[0];
+        newAddress = `${road} ${house_number ?? ""}`;
+      }
+      setAddress(newAddress);
     },
   });
 
@@ -43,18 +65,29 @@ function MainForm() {
     console.log("создаем заказ, вот данные формы:", values);
   };
 
-  const handleSelectFromOnMap = () => {
-    setSelectionOnMap(true);
+  const handleSelectFromOnMap = (field) => {
+    setSelectionOnMap(field);
   };
   const handleCancelSelectOnMap = () => {
-    setSelectionOnMap(false);
+    setSelectionOnMap(null);
+  };
+
+  const handleSetFrom = (formChange) => {
+    formChange(selectingOnMap, address);
+    setSelectionOnMap(null);
   };
 
   return (
     <Form
       onSubmit={onSubmit}
       initialValues={initialValues}
-      render={({ handleSubmit, form, submitting, pristine, values }) => (
+      render={({
+        handleSubmit,
+        form: { change },
+        submitting,
+        pristine,
+        values,
+      }) => (
         <form onSubmit={handleSubmit} className={styles.form}>
           {selectingOnMap ? (
             <>
@@ -70,9 +103,14 @@ function MainForm() {
               <Container>
                 <div className={styles.paper}>
                   <CircleIcon />
-                  {address}
-                  <button className={styles.bigYellowBtn} type="button">
-                    Поеду отсюда
+                  <Spacer x={1} display="inline-block" />
+                  {loading ? "..." : address}
+                  <button
+                    className={styles.bigYellowBtn}
+                    type="button"
+                    onClick={() => handleSetFrom(change)}
+                  >
+                    Поеду {selectingOnMap === "from" ? "отсюда" : "сюда"}
                   </button>
                 </div>
               </Container>
@@ -94,7 +132,9 @@ function MainForm() {
                           <Spacer x={1} />
                           <Divider variant="vertical" y={3} />
                           <Spacer x={1} />
-                          <TextButton onClick={handleSelectFromOnMap}>
+                          <TextButton
+                            onClick={() => handleSelectFromOnMap("from")}
+                          >
                             Карта
                           </TextButton>
                         </>
@@ -119,7 +159,11 @@ function MainForm() {
                           <Spacer x={1} />
                           <Divider variant="vertical" y={3} />
                           <Spacer x={1} />
-                          <TextButton>Карта</TextButton>
+                          <TextButton
+                            onClick={() => handleSelectFromOnMap("to")}
+                          >
+                            Карта
+                          </TextButton>
                         </>
                       }
                     />

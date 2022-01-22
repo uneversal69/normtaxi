@@ -10,6 +10,7 @@ export const authAsPassengerUri = "/auth/passenger";
 export const authCheckCodeUri = "/auth/code";
 export const authCheckUri = "/user";
 export const authLogoutUri = "/auth/logout";
+export const geocodeReverseUri = ({ lat, lng }) => `/geocode/${lat}/${lng}`;
 
 export const AppContext = createContext(null);
 
